@@ -108,16 +108,9 @@ const users =  [
 ];
 // Write code under this line
 const getSortedUniqueSkills = (array) => array
-    .map(({ skills }) => skills)
-    .reduce((acc, skills) => acc + ',' + skills)
-    .split(',')
-    .filter((skills, idx) => {
-    //     const unique = [];
-    //     if skills === unique indexOf(unique)
-        
-    //     array.reduce(({ skills }) => Unique)
-    // })
-    // // .sort(()=>)
+    .reduce((acc, { skills }) => acc.concat(skills),[])
+    .filter((unique, idx, array) => array.indexOf(unique)===idx)
+   .sort()
     ;
 // Получи массив всех умений всех пользователей(поле skills), при этом не должно быть повторяющихся умений
 // и они должны быть отсортированы в алфавитном порядке.
